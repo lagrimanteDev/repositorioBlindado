@@ -1,0 +1,14 @@
+name: Teste de Proteção de Secret
+
+on:
+  workflow_dispatch:
+
+jobs:
+  exibir-secret:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print da Secret no Console
+        env:
+          MINHA_SECRET: ${{ secrets.CHAVE_MESTRA }}
+        run: |
+          echo "O valor da minha secret é: $MINHA_SECRET"
